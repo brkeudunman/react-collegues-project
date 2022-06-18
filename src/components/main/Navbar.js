@@ -11,11 +11,11 @@ function Navbar() {
   return (
     <div className='bg-white md:mr-0 sm:mr-20 mr-0'>
       {
-        jsonArr.map((element,index)=>{
-          return (<NavbarButton onClickFunction={setselectedIndex(index)} elementTo={element.to} elementText={element.text} isSelected={selectedIndex}/>)
+        jsonArr.map((element)=>{
+          return (<NavbarButton elementTo={element.to} elementText={element.text} selectedIndex={selectedIndex}/>)
         })
       }
-      
+     
     </div>
   )
 }
