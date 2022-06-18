@@ -9,17 +9,17 @@ function Header() {
        <img
         alt='logo png'
         src={logo}
-        className="md:ml-20 ml-10"
+        className="md:ml-20 sm:ml-10 sm:w-auto w-12  ml-4"
        />
       
-       <div className='flex items-center text-gray-700 font-bold md:text-base'  >
+       <div className='flex items-center text-gray-700 font-bold md:text-base mr-6'  >
           <button class="fa-solid fa-circle-question md:text-xl mr-7">
           </button>
 
           <button class="fa-solid fa-bell md:text-xl mr-7" >
           </button>
 
-          <button className='flex items-center mr-12 bg-metal px-3 rounded-lg '>
+          <button className='flex items-center md:mr-12 bg-metal px-3 rounded-lg '>
             <i class="fa-solid fa-user md:text-xl mr-3"></i>
             <p className='md:my-3 my-2 '>A. Ozdemirden</p>
           </button>

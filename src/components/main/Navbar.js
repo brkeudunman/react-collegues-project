@@ -1,18 +1,18 @@
-import React,{useState} from 'react'
+import React from 'react'
 import NavbarButton from './NavbarButton'
 
 
 function Navbar() {
  
   var jsonArr = [{to:"/",text:"Home"},{to:"/notifications",text:"Notifications"}]
-
-  const [selectedIndex, setselectedIndex] = useState(0)
+  var icoArr = [(<i class="ml-2 text-lg fa-solid fa-house"></i>),(<i class="ml-2 text-lg fa-solid fa-book"></i>)]
+ 
 
   return (
-    <div className='bg-white md:mr-0 sm:mr-20 mr-0'>
+    <div className='bg-white flex flex-col w-36 sm:w-auto'>
       {
-        jsonArr.map((element)=>{
-          return (<NavbarButton elementTo={element.to} elementText={element.text} selectedIndex={selectedIndex}/>)
+        jsonArr.map((element,index)=>{
+          return (<NavbarButton elementTo={element.to} elementText={element.text} icoSelected={icoArr[index]}/>)
         })
       }
      

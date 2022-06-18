@@ -11,15 +11,14 @@ import fimg from '../../../imgs/6.png'
 
 function Cards() {
   return (
-    <div className='flex-col pb-5'>
-      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12 ml-6 text-center md:text-start'>Colleges & Programs</h1>
-      <div className='md:flex justify-center md:ml-12 ml-6 gap-5  mt-4'>
+    <div className='flex-col pb-5 mt-3'>
+      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12 ml-6'>Colleges & Programs</h1>
+      <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 mt-4 md:mx-12 mx-6'>
         <Card img={aimg}/>
         <Card img={bimg}/>
         <Card img={cimg} />
-      </div>
-
-      <div className='md:flex md:ml-12 ml-6 gap-5 mt-4'>
+    
+  
         <Card img={dimg}/>
         <Card img={eimg}/>
         <Card img={fimg}/>
