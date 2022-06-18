@@ -7,12 +7,11 @@ import Notifications from './main/Notifications/Notifications'
 
 
 function Main() {
-  const [selectedIndex, setSelectedIndex] = useState(0)
-
+  const navbarMenu = [{to:"/",text:"Home"},{to:"/notifications",text:"Notifications"}];
   return (
       
         <div className='flex md:justify-start bg-bg-metal'>
-          <Navbar selectedIndex={selectedIndex}/>   
+          <Navbar data={navbarMenu}/>   
           <Routes>    
             <Route  path='/' element={<Cards></Cards>}></Route>
             <Route path='notifications' element={<Notifications></Notifications>}></Route>           
