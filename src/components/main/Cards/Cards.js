@@ -7,16 +7,19 @@ import dimg from '../../../imgs/4.png'
 import eimg from '../../../imgs/5.png'
 import fimg from '../../../imgs/6.png'
 
+
+
 function Cards() {
   return (
-    <div>
-      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12 ml-6'>Colleges & Programs</h1>
-      <div className='flex md:ml-12 ml-6 gap-5  mt-4'>
+    <div className='flex-col pb-5'>
+      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12 ml-6 text-center md:text-start'>Colleges & Programs</h1>
+      <div className='md:flex justify-center md:ml-12 ml-6 gap-5  mt-4'>
         <Card img={aimg}/>
         <Card img={bimg}/>
-        <Card img={cimg}/>
+        <Card img={cimg} />
       </div>
-      <div className='flex md:ml-12 ml-6 gap-5 mt-4'>
+
+      <div className='md:flex md:ml-12 ml-6 gap-5 mt-4'>
         <Card img={dimg}/>
         <Card img={eimg}/>
         <Card img={fimg}/>

@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Notifications() {
+  
   return (
     <div className='text-gray-700 '>
       <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12 ml-6'>Notifications </h1>

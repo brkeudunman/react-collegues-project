@@ -4,7 +4,7 @@ import logo from '../imgs/logo_submit.png'
 
 function Header() {
   return (
-    <div className='flex justify-between items-center bg-white border-solid border-b-2  py-4 border-metal'>
+    <div className='flex justify-between items-center bg-white border-solid border-b-2  md:py-4 py-2 border-metal'>
 
        <img
         alt='logo png'
@@ -21,7 +21,7 @@ function Header() {
 
           <button className='flex items-center mr-12 bg-metal px-3 rounded-lg '>
             <i class="fa-solid fa-user md:text-xl mr-3"></i>
-            <p className='my-3 '>A. Ozdemirden</p>
+            <p className='md:my-3 my-2 '>A. Ozdemirden</p>
           </button>
        </div>
 
