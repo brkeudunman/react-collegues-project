@@ -9,6 +9,9 @@ module.exports = {
         'bg-metal':'#E5E5E5',
         'not-metal':'#EDF2F7'
       },
+      fontFamily: {
+        'montserrat': ['Montserrat'],
+      },
     },
     colors: {
       transparent: 'transparent',
