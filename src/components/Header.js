@@ -9,7 +9,7 @@ function Header() {
        <img
         alt='logo png'
         src={logo}
-        className="md:ml-20 sm:ml-10 sm:w-auto w-12  ml-4"
+        className="md:ml-20 sm:ml-10 sm:w-auto w-12 mr-4 md:mr-0 ml-4"
        />
       
        <div className='flex items-center text-gray-700 font-bold md:text-base mr-6'  >
@@ -21,7 +21,7 @@ function Header() {
 
           <button className='flex items-center md:mr-12 bg-metal px-3 rounded-lg '>
             <i class="fa-solid fa-user md:text-xl mr-3"></i>
-            <p className='md:my-3 my-2 '>A. Ozdemirden</p>
+            <p className='md:my-3 my-2 md:text-base text-sm '>A. Ozdemirden</p>
           </button>
        </div>
 

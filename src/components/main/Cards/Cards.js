@@ -13,7 +13,7 @@ function Cards() {
   return (
     <div className='flex-col pb-5 mt-3'>
       <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12 ml-6'>Colleges & Programs</h1>
-      <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 mt-4 md:mx-12 mx-6'>
+      <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-4 md:mx-12 mx-6 flex-1 '>
         <Card img={aimg}/>
         <Card img={bimg}/>
         <Card img={cimg} />

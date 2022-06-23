@@ -12,7 +12,6 @@ function Main() {
   let serviceApi = new articleService();
   const [data, setData] = useState([])
 
-
   useEffect(() => {
     serviceApi.getAllData()?.then(
       element=>
@@ -26,11 +25,9 @@ function Main() {
     )
   }, [])
 
-
-
   return (
       
-        <div className='flex md:justify-start bg-bg-metal'>
+        <div className='flex md:justify-start bg-bg-metal h-full'>
           <Navbar/>   
           <Routes>    
             <Route  path='/' element={<Cards></Cards>}></Route>

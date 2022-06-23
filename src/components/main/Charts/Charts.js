@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
-import Chart from './Chart'
+import BarChart from './BarChart'
+import Chart from 'chart.js/auto';
 
 function Charts({articlesData}) {
   
 
   const [articles, setArticles] = useState(
     {
-      labels: articlesData.map((data)=>data.year),
+      labels: articlesData.map((data)=>data?.year),
       datasets: [{
         label:"Articles Written",
         data: articlesData.map((data)=>data.count),
@@ -15,10 +16,10 @@ function Charts({articlesData}) {
   )
 
   return (
-    <div>
-      <Chart/>
-      <Chart/>
-      <Chart/>
+    <div className='grid grid-cols-1 flex-auto lg:p-16 px-2'>
+      <BarChart articleData={articles} />
+      <BarChart articleData={articles} />
+      <BarChart articleData={articles} />
     </div>
   )
 }
