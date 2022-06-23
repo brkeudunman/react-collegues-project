@@ -1,4 +1,17 @@
-### Screenshots
+### New Features:
+
+Navbar is more responsive.
+The grid design is implemented to the cards
+The mobiles can see more content than before
+
+### Todos:
+
+1. The height problem must be asked.
+2. Bar Chart should be styled.
+3. Learn how to implement pie chart.
+
+
+### Screenshots:
 
 ![image](https://user-images.githubusercontent.com/61910163/174452232-dbdf47fc-5d88-4b0f-a175-0c40756d5723.png)
   
