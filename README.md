@@ -8,7 +8,11 @@ The mobiles can see more content than before
 
 1. The height problem must be asked.
 2. Bar Chart should be styled.
-3. Learn how to implement pie chart.
+3. <s> Learn how to implement pie chart.</s>
+4. <s> Pie chart should be deployed. </s>
+5. Pie Chart should be styled.
+6. <s> Should be more responsive</s>
+
 
 
 ### Screenshots:
