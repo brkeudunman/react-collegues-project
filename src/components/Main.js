@@ -1,26 +1,28 @@
 import React,{useState,useEffect} from 'react'
 import {Routes,Route} from 'react-router-dom'
-import articleService from '../services/articleService'
 import Navbar from './main/Navbar'
 import Cards from './main/Cards/Cards'
 import Notifications from './main/Notifications/Notifications'
 import Charts from './main/Charts/Charts'
+import dataService from '../services/dataService'
 
 
 function Main() {
 
-  let serviceApi = new articleService();
-  const [data, setData] = useState([])
+  let serviceApi = new dataService();
+  const [articleData, setArticleData] = useState([])
+  const [refData,setRefData] = useState(serviceApi.getReferenceData)
+  const [journalData,setJournalData] = useState(serviceApi.getJournalData)
 
   useEffect(() => {
-    serviceApi.getAllData()?.then(
+    serviceApi.getArticleData()?.then(
       element=>
         {const articles = element.data
          var arr = []
          articles.map((e)=>(
             arr.push(e)
          ))
-        setData(arr)
+        setArticleData(arr)
         }
     )
   }, [])
@@ -32,7 +34,7 @@ function Main() {
           <Routes>    
             <Route  path='/' element={<Cards></Cards>}></Route>
             <Route path='notifications' element={<Notifications></Notifications>}></Route>
-            <Route path='charts' element={<Charts articlesData={data} ></Charts>}></Route>         
+            <Route path='charts' element={<Charts articlesData={articleData} refData={refData} jourData={journalData}></Charts>}></Route>         
           </Routes>
         </div>
   )
