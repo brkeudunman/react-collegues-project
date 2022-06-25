@@ -17,6 +17,8 @@ The mobiles can see more content than before
 
 ### Screenshots:
 
+(The charts icon in the navbar has changed, barchart is styled and pie charts have been added since the screenshots deployed) 
+
 ![ezgif-4-da5ffe3c1b](https://user-images.githubusercontent.com/61910163/175327047-c83dc257-f0a6-4791-a109-f667102db84a.gif)
 
 
