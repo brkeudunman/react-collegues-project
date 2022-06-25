@@ -3,8 +3,10 @@ import BarChart from './BarChart'
 import Chart from 'chart.js/auto';
 import PieChart from './PieChart';
 
+
 function Charts({articlesData,refData,jourData}) {
   
+  const colors=["#343a40","#6f42c1","#e83e8c","#fd7e14","#ffc107"]
 
   const [articles, setArticles] = useState(
     {
@@ -12,6 +14,7 @@ function Charts({articlesData,refData,jourData}) {
       datasets: [{
         label:"Articles Written",
         data: articlesData.map((data)=>data.count),
+        backgroundColor:"#343a40"
       }]
     }
   )
@@ -22,7 +25,8 @@ function Charts({articlesData,refData,jourData}) {
       datasets:[
         {
           label:"ref",
-          data:refData.map(data=>data?.count)
+          data:refData.map(data=>data?.count),
+          backgroundColor:colors.map(color=>color)
         }
       ]
     }
@@ -33,7 +37,8 @@ function Charts({articlesData,refData,jourData}) {
       datasets:[
         {
           label:"ref",
-          data:jourData.map(data=>data?.count)
+          data:jourData.map(data=>data?.count),
+          backgroundColor:colors.map(color=>color)
         }
       ]
     }
