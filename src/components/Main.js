@@ -30,12 +30,15 @@ function Main() {
   return (
       
         <div className='flex md:justify-start bg-bg-metal h-full'>
-          <Navbar/>   
-          <Routes>    
-            <Route  path='/' element={<Cards></Cards>}></Route>
-            <Route path='notifications' element={<Notifications></Notifications>}></Route>
-            <Route path='charts' element={<Charts articlesData={articleData} refData={refData} jourData={journalData}></Charts>}></Route>         
-          </Routes>
+          <Navbar/>
+          <div className='flex justify-center w-full h-full'>
+            <Routes>    
+              <Route  path='/' element={<Cards></Cards>}></Route>
+              <Route path='notifications' element={<Notifications></Notifications>}></Route>
+              <Route path='charts' element={<Charts articlesData={articleData} refData={refData} jourData={journalData}></Charts>}></Route>         
+            </Routes>
+          </div>
+         
         </div>
   )
 }

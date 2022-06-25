@@ -43,7 +43,7 @@ function Charts({articlesData,refData,jourData}) {
       ]
     }
   )
-
+  
   return (
     <div className='grid grid-cols-1 gap-5 lg:p-16 px-2 flex-1 lg:grid-cols-2'>
       <BarChart data={articles} header={<h2 className='self-center mb-4'>Articles:</h2>}/>
