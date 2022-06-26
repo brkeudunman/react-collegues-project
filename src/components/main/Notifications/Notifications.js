@@ -3,7 +3,7 @@ import React from 'react'
 function Notifications() {
   
   return (
-    <div className='text-gray-700 '>
+    <div className='text-gray-700 pb-4'>
       <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12 md:text-start text-center'>Notifications </h1>
 
       <div className='md:ml-12 ml-3 gap-5 mt-8 mx-auto mr-3 bg-white pl-12 pr-6 py-6 rounded-lg border-not-metal shadow-md'>
