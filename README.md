@@ -9,9 +9,11 @@ The mobiles can see more content than before
 1. The height problem must be asked.
 2. <s> Bar Chart should be styled. </s>
 3. <s> Learn how to implement pie chart.</s>
-4. <s> Pie chart should be deployed. </s>
+4. Pie chart should be deployed.
 5. <s> Pie Chart should be styled.</s>
 6. <s> Should be more responsive</s>
+7. <s> Bar Chart should fetch data with useQuery hook </s>
+8. Contact Page should be created with react hook form and the postings will be handled with useQuery
 
 
 
