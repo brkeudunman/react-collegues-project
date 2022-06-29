@@ -1,45 +1,37 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import {Routes,Route} from 'react-router-dom'
-import Navbar from './main/Navbar'
-import Cards from './main/Cards/Cards'
-import Notifications from './main/Notifications/Notifications'
-import Charts from './main/Charts/Charts'
-import dataService from '../services/dataService'
+
+import Cards from './pages/Cards/Cards'
+import Notifications from './pages/Notifications/Notifications'
+import Charts from './pages/Charts/Charts'
+import fetchArticlesData from '../services/fetchArticlesData';
+import { useQuery } from 'react-query';
+import Contact from './pages/Contact/Contact'
 
 
 function Main() {
 
-  let serviceApi = new dataService();
-  const [articleData, setArticleData] = useState([])
-  const [refData,setRefData] = useState(serviceApi.getReferenceData)
-  const [journalData,setJournalData] = useState(serviceApi.getJournalData)
+  const {data,status} = useQuery('articlesData',fetchArticlesData)
 
-  useEffect(() => {
-    serviceApi.getArticleData()?.then(
-      element=>
-        {const articles = element.data
-         var arr = []
-         articles.map((e)=>(
-            arr.push(e)
-         ))
-        setArticleData(arr)
-        }
-    )
-  }, [])
+  if(status==="loading"){
+    return <div> Loading ...</div>
+  }
 
+  else if(status ==="error"){
+    return <div>Error...</div>
+  }
   return (
-      
-        <div className='flex md:justify-start bg-bg-metal h-full'>
-          <Navbar/>
-          <div className='flex justify-center w-full h-full'>
-            <Routes>    
-              <Route  path='/' element={<Cards></Cards>}></Route>
-              <Route path='notifications' element={<Notifications></Notifications>}></Route>
-              <Route path='charts' element={<Charts articlesData={articleData} refData={refData} jourData={journalData}></Charts>}></Route>         
-            </Routes>
-          </div>
-         
-        </div>
+   
+    <div className='flex justify-center w-full h-full'>
+      <Routes>    
+        <Route  path='/' element={<Cards></Cards>}></Route>
+        <Route path='notifications' element={<Notifications></Notifications>}></Route>
+        <Route path='charts' element={<Charts articlesData={data}></Charts>}></Route>       
+        <Route path='contact' element={<Contact></Contact>}></Route>  
+      </Routes>
+    </div>
+       
+        
   )
 }
 
