@@ -7,17 +7,20 @@ import Charts from './pages/Charts/Charts'
 import fetchArticlesData from '../services/fetchArticlesData';
 import { useQuery } from 'react-query';
 import Contact from './pages/Contact/Contact'
+import fetchReferenceData from '../services/fetchReferenceData'
 
 
 function Main() {
 
-  const {data,status} = useQuery('articlesData',fetchArticlesData)
+  const {data:articlesData,isLoading:isArticlesLoading,error:articlesError} = useQuery('articlesData',fetchArticlesData)
+  const {data:referencesData,isLoading:isReferencesLoading,error:referenceError} = useQuery('referencesData',fetchReferenceData)
 
-  if(status==="loading"){
+
+  if(isArticlesLoading || isReferencesLoading ){
     return <div> Loading ...</div>
   }
 
-  else if(status ==="error"){
+  else if(articlesError || referenceError){
     return <div>Error...</div>
   }
   return (
@@ -26,7 +29,7 @@ function Main() {
       <Routes>    
         <Route  path='/' element={<Cards></Cards>}></Route>
         <Route path='notifications' element={<Notifications></Notifications>}></Route>
-        <Route path='charts' element={<Charts articlesData={data}></Charts>}></Route>       
+        <Route path='charts' element={<Charts articlesData={articlesData} referencesData={referencesData}></Charts>}></Route>       
         <Route path='contact' element={<Contact></Contact>}></Route>  
       </Routes>
     </div>
