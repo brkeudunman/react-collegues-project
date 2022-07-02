@@ -42,7 +42,7 @@ function Charts({articlesData,referencesData,journalsData}) {
 
   return (
     <span className='w-full'>
-      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-2 lg:ml-16 md:text-start text-center'>Charts</h1>
+      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 lg:ml-12 md:ml-3 md:text-start text-center'>Charts</h1>
       <div className='grid grid-cols-1 gap-5 lg:px-12 px-3 py-4 flex-1 lg:grid-cols-2 '>
         <BarChart data={articles} header={<h2 className='self-center mb-2'>Articles:</h2>}/>
         <PieChart data={references} header={<h2>References:</h2>} />
