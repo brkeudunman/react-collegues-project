@@ -5,7 +5,7 @@ import NavbarButton from './NavbarButton'
 function Navbar() {
  
   var jsonArr = [{to:"/",text:"Home"},{to:"/notifications",text:"Notifications"},{to:"/charts",text:"Charts"},{to:"/contact",text:"Contact Us"}]
-  var icoArr = [(<i class="ml-2 sm:text-lg fa-solid fa-house"></i>),(<i class="ml-2 text-lg fa-solid fa-book"></i>),(<i class="ml-2 text-lg fa-solid fa-chart-bar"></i>)]
+  var icoArr = [(<i class="ml-2 sm:text-lg fa-solid fa-house"></i>),(<i class="ml-2 text-lg fa-solid fa-book"></i>),(<i class="ml-2 text-lg fa-solid fa-chart-bar"></i>),(<i class="ml-2 text-lg fa-solid fa-address-book"></i>)]
  
 
   return (
