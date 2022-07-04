@@ -11,8 +11,8 @@ import fimg from '../../../imgs/6.png'
 
 function Cards() {
   return (
-    <div className='flex-col pb-5 mt-3'>
-      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12  md:text-start text-center' >Colleges & Programs</h1>
+    <div className='flex-col pb-5 w-full'>
+      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:my-8 my-4 md:ml-12 md:text-start text-center'>Colleges & Programs </h1>
       <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-4 md:mx-12 mx-6 flex-1 '>
         <Card img={aimg}/>
         <Card img={bimg}/>

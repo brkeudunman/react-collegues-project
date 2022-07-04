@@ -3,7 +3,27 @@ import BarChart from './BarChart'
 import Chart from 'chart.js/auto';
 import PieChart from './PieChart';
 
-function Charts({articlesData,referencesData,journalsData}) {
+
+import { useQuery } from 'react-query';
+import fetchArticlesData from '../../../services/fetchArticlesData';
+
+import fetchReferenceData from '../../../services/fetchReferenceData'
+import fetchJournalsData from '../../../services/fetchJournalsData'
+
+
+function Charts() {
+
+  const {data:articlesData,isLoading:isArticlesLoading,error:articlesError} = useQuery('articlesData',fetchArticlesData)
+  const {data:referencesData,isLoading:isReferencesLoading,error:referenceError} = useQuery('referencesData',fetchReferenceData)
+  const {data:journalsData,isLoading:isJournalsLoading,error:journalsError} = useQuery('journalsData',fetchJournalsData)
+
+  if(isArticlesLoading || isReferencesLoading || isJournalsLoading ){
+    return <div> Loading ...</div>
+  }
+
+  else if(articlesError || referenceError || journalsError){
+    return <div>Error...</div>
+  }
 
 
   const colors=["#343a40","#6f42c1","#e83e8c","#fd7e14","#ffc107"]
