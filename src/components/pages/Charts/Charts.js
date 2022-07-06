@@ -18,13 +18,12 @@ function Charts() {
   const {data:journalsData,isLoading:isJournalsLoading,error:journalsError} = useQuery('journalsData',fetchJournalsData)
 
   if(isArticlesLoading || isReferencesLoading || isJournalsLoading ){
-    return <div> Loading ...</div>
+    return <div>Loading ...</div>
   }
 
   else if(articlesError || referenceError || journalsError){
     return <div>Error...</div>
   }
-
 
   const colors=["#343a40","#6f42c1","#e83e8c","#fd7e14","#ffc107"]
 
