@@ -11,11 +11,10 @@ function Navbar() {
   return (
     <div className='bg-white flex flex-col md:w-auto'>
       {
-        jsonArr.map((element,index)=>{
+          jsonArr.map((element,index)=>{
           return (<NavbarButton elementTo={element.to} elementText={element.text} icoSelected={icoArr[index]}/>)
         })
       }
-     
     </div>
   )
 }

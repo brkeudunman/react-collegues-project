@@ -4,15 +4,13 @@ import Main from './components/Main.js'
 import Navbar from "./components/Navbar/Navbar.js";
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-
-
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <div className="font-montserrat h-full">
       <Header/>
-      <div className='flex md:justify-start bg-bg-metal h-full'>
+      <div className='flex md:justify-start bg-bg-metal min-h-full'>
         <Navbar/>
         <QueryClientProvider client={queryClient}>
           <Main/>

@@ -8,10 +8,9 @@ import Contact from './pages/Contact/Contact'
 
 function Main() {
 
-  
   return (
    
-    <div className='flex justify-center w-full h-full'>
+    <div className='flex justify-center w-full'>
       <Routes>    
         <Route  path='/' element={<Cards></Cards>}></Route>
         <Route path='notifications' element={<Notifications></Notifications>}></Route>
