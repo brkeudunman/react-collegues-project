@@ -9,6 +9,7 @@ import fetchArticlesData from '../../../services/fetchArticlesData';
 
 import fetchReferenceData from '../../../services/fetchReferenceData'
 import fetchJournalsData from '../../../services/fetchJournalsData'
+import { Spin } from 'antd';
 
 
 function Charts() {
@@ -18,7 +19,12 @@ function Charts() {
   const {data:journalsData,isLoading:isJournalsLoading,error:journalsError} = useQuery('journalsData',fetchJournalsData)
 
   if(isArticlesLoading || isReferencesLoading || isJournalsLoading ){
-    return <div>Loading ...</div>
+    return (
+      <div className='mt-8'>
+        <div ><Spin tip="Loading" /></div>
+      </div>
+    )
+    
   }
 
   else if(articlesError || referenceError || journalsError){

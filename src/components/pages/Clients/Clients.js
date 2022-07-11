@@ -1,6 +1,6 @@
 import React from 'react'
 import { Spin, Table } from 'antd';
-import 'antd/dist/antd.css';
+
 import fetchColumnSchema from './TableData/fetchColumnSchema';
 import fetchClientsData from './TableData/fetchClientsData';
 import { useQuery } from 'react-query';
@@ -12,11 +12,8 @@ function Clients() {
   var columnstData = fetchColumnSchema()
   var dataSource = fetchClientsData(referencesData)
 
-
-
   if(isReferencesLoading){
-  
-    <Spin/>
+    <div className='flex gap-5'><p>Loading... </p><Spin/></div>
   }
 
   return (

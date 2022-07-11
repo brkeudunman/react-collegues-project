@@ -15,7 +15,7 @@ function NavbarButton({elementTo,elementText,icoSelected}) {
       className={({ isActive }) =>
                 isActive ? activeClassName : passiveClassName}>
       {icoSelected}
-      <p className='ml-2 mr-10 hidden sm:block'>{elementText}</p>
+      <p className='ml-2 mr-10 my-0 hidden sm:block'>{elementText}</p>
     </NavLink>
   )
 }
