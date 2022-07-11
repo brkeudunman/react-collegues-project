@@ -1,6 +1,7 @@
 import React from 'react'
 import 'antd/dist/antd.css';
 import {Space} from'antd'
+import { CloseCircleOutlined, EditOutlined } from '@ant-design/icons';
 
 function fetchColumnSchema() {
 
@@ -10,7 +11,8 @@ function fetchColumnSchema() {
         {
             title:'Name',
             dataIndex:'name',
-            key:'name'
+            key:'name',
+            
         },
         {
             title:'References',
@@ -18,14 +20,15 @@ function fetchColumnSchema() {
             key:'references',
             defaultSortOrder: 'descend',
             sorter: (a, b) => a.references - b.references,
+           
         },
         {
             title: 'Action',
             key: 'action',
-            render: (_, record) => (
+            render: () => (
               <Space size="middle">
-                <button className='text-gray-600'>Edit {record.name}</button>
-                <button className='text-primary-400'>Delete</button>
+                <button className='text-gray-600'><div className='flex items-center'><span className='md:inline hidden mr-2' >Edit</span> <EditOutlined /></div> </button>
+                <button className='text-primary-400'><div className='flex items-center'><span className='lg:inline hidden mr-2' >Delete</span> <CloseCircleOutlined /></div></button>
               </Space>
             ),
           },

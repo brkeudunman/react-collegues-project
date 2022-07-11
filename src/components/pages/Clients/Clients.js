@@ -17,10 +17,10 @@ function Clients() {
   }
 
   return (
-    <div className='flex  flex-col flex-1 w-full' >
+    <div className='flex flex-col md:w-3/4  flex-wrap' >
       
-      <Table className='lg:w-full ' size='small' rowSelection={{type: "checkbox"}}  columns={columnstData} dataSource={dataSource} />
-      <Spin/>
+      <Table size='small' rowSelection={{type: "checkbox"}}  columns={columnstData} dataSource={dataSource} />
+      
     </div>
     
   )
