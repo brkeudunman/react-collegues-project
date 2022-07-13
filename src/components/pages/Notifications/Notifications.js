@@ -23,7 +23,7 @@ function Notifications() {
 
   return (
     <div className='text-gray-700 pb-4'>
-      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12 md:text-start text-center'>Notifications </h1>
+      <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 md:ml-12 md:text-start text-center mb-8'>Notifications </h1>
       <div className='flex md:ml-12 ml-3 gap-5  mt-4 mx-auto mr-3 ' >
       <Card bordered={true} style={cardStyleActive}>
       <div>

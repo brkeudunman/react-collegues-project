@@ -1,10 +1,28 @@
 import React from 'react'
 import 'antd/dist/antd.css';
-import {Space} from'antd'
+import {Button,message, Space} from'antd'
 import { CloseCircleOutlined, EditOutlined } from '@ant-design/icons';
 
 function fetchColumnSchema() {
 
+    const contentEdit = (name) => {
+      return name +' is edited';
+    }
+    const contentDelete = (name) => {
+      return name +' is deleted';
+    }
+  
+    const editContent = (name) => {
+      message
+      .loading('Action in progress..', 1.5)
+      .then(() => message.success(contentEdit(name), 1))
+    };
+
+    const deleteContent = (name) => {
+      message
+      .loading('Action in progress..', 1.5)
+      .then(() => message.success(contentDelete(name), 1))
+    }
 
     const columns = [
 
@@ -25,10 +43,10 @@ function fetchColumnSchema() {
         {
             title: 'Action',
             key: 'action',
-            render: () => (
+            render: (_,record) => (
               <Space size="middle">
-                <button className='text-gray-600'><div className='flex items-center'><span className='md:inline hidden mr-2' >Edit</span> <EditOutlined /></div> </button>
-                <button className='text-primary-400'><div className='flex items-center'><span className='lg:inline hidden mr-2' >Delete</span> <CloseCircleOutlined /></div></button>
+                <Button onClick={()=>{editContent(record.name)}} type='dashed'><div className='flex items-center'><span className='md:inline hidden mr-2 text-gray-600' >Edit</span> <EditOutlined style={{color:"gray"}} /></div> </Button>
+                <Button onClick={()=>{deleteContent(record.name)}} type='text'><div className='flex items-center'><span className='lg:inline hidden mr-2 text-primary-400' >Delete</span> <CloseCircleOutlined style={{color:"red"}}/></div></Button>
               </Space>
             ),
           },
