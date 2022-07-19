@@ -3,6 +3,9 @@ import BarChart from './BarChart'
 import Chart from 'chart.js/auto';
 import PieChart from './PieChart';
 
+import { Tabs } from 'antd';
+
+
 
 import { useQuery } from 'react-query';
 import fetchArticlesData from '../../../services/fetchArticlesData';
@@ -12,11 +15,18 @@ import fetchJournalsData from '../../../services/fetchJournalsData'
 import { Spin } from 'antd';
 
 
+
+const { TabPane } = Tabs;
+
+
+
 function Charts() {
 
   const {data:articlesData,isLoading:isArticlesLoading,error:articlesError} = useQuery('articlesData',fetchArticlesData)
   const {data:referencesData,isLoading:isReferencesLoading,error:referenceError} = useQuery('referencesData',fetchReferenceData)
   const {data:journalsData,isLoading:isJournalsLoading,error:journalsError} = useQuery('journalsData',fetchJournalsData)
+
+
 
   if(isArticlesLoading || isReferencesLoading || isJournalsLoading ){
     return (
@@ -64,15 +74,26 @@ function Charts() {
         }
       ]
     }
-
+  
   return (
     <span className='w-full'>
       <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 lg:ml-12 md:ml-3 md:text-start text-center'>Charts</h1>
-      <div className='grid grid-cols-1 gap-5 lg:px-12 px-3 pb-4 flex-1 lg:grid-cols-2 '>
-        <BarChart data={articles} header={<h2 className='self-center mb-2'>Articles:</h2>}/>
-        <PieChart data={references} header={<h2>References:</h2>} />
-        <PieChart data={journals} header={<h2>Journals:</h2>} />
+      <div className='lg:px-12  '>
+        <Tabs style={{color:"#718096"}} centered defaultActiveKey="1">
+
+        <TabPane  tab="Articles" key="1">
+          <BarChart data={articles} header={<h2 className='self-center mb-2'>Articles:</h2>}/>
+        </TabPane>
+
+        <TabPane tab="References" key="2">
+          <PieChart data={references} header={<h2>References:</h2>} />
+        </TabPane>
+        <TabPane tab="Journals" key="3">
+          <PieChart data={journals} header={<h2>Journals:</h2>} />
+        </TabPane>  
+        </Tabs>
       </div>
+      
     </span>
    
   )
