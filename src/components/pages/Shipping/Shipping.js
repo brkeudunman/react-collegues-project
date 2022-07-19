@@ -16,7 +16,7 @@ function Shipping() {
         {
         title: 'First',
         content: 
-        (   <div className='mb-8'>
+        (   <div >
                 <Card >
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur facilisis dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur facilisis dignissim.orem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur facilisis dignissim.orem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur facilisis dignissim.orem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur facilisis dignissim</p>
@@ -32,12 +32,12 @@ function Shipping() {
         {
         title: 'Second',
 
-        content: (<div className='w-3/5'>
+        content: (<div className='lg:w-3/5'>
                     <Form >
-                        <Form.Item className='w-1/3' required label="Name">
+                        <Form.Item className='lg:w-1/3' required label="Name">
                             <Input></Input>
                         </Form.Item>
-                        <Form.Item className='w-1/2' required label="Payment Method">
+                        <Form.Item className='lg:w-1/2' required label="Payment Method">
                             <Select>
                                 <Select.Option value="Cash">Cash</Select.Option>
                                 <Select.Option value="Online Payment">Online Payment</Select.Option>
@@ -80,7 +80,7 @@ function Shipping() {
 
         <div className="steps-content flex mt-8">{steps[current].content}</div>
 
-        <div className="steps-action">
+        <div className="steps-action flex mt-8">
             {current < steps.length - 1 && (
             <Button disabled={(!terms)} type="primary" onClick={() => next()}>
                 Next
