@@ -1,18 +1,56 @@
 import React,{useState} from 'react'
 import './index.css'
 
-import { Button, Checkbox, DatePicker, Form, message, Steps } from 'antd';
+import { Button, Calendar, Checkbox, DatePicker, Form, message, Steps } from 'antd';
 import Terms from './Terms';
 import ShippingInfo from './ShippingInfo';
+import moment from 'moment'
 
 const { Step } = Steps;
 
-
+function disabledDate(current) {
+    // Can not select days before today and today
+    return current && current < moment().endOf('day');
+}
 
 function Shipping() {
 
     const [terms, setTerms] = useState(false)
     const [calendar,setCalendar] = useState("")
+    const [value, setValue] = useState(moment().endOf('day'));
+    const [selectedValue, setSelectedValue] = useState(moment(''));
+
+    const onSelect = (newValue) => {
+        setValue(newValue);
+        setSelectedValue(newValue);
+    };
+
+    const onPanelChange = (newValue) => {
+        setValue(newValue);
+    };
+    const [current, setCurrent] = useState(0);
+
+    const next = () => {
+        setCurrent(current + 1);
+    };
+
+    const prev = () => {
+        setCurrent(current - 1);
+    };
+
+    const checkTime = function () {
+        if(calendar==="" && selectedValue?.format('YYYY-MM-DD')!=='Invalid date'){
+            message.success('Shipping will arrive at ' + selectedValue?.format('YYYY-MM-DD'))
+        }
+        else if (calendar!==''){
+            message.success('Shipping will arrive at ' + calendar)
+        }
+        else{
+            message.warn("Invalid Date")
+        }
+    }
+
+
 
     
     const steps = [
@@ -21,6 +59,7 @@ function Shipping() {
         content:(<span>
                     <Terms/>
                     <Checkbox checked={terms} onChange={()=>{setTerms(!terms)}}>Understand the terms</Checkbox>
+                    
                 </span>)
 
         },
@@ -34,34 +73,22 @@ function Shipping() {
         content: (
             <div className='w-full'>
                 <span className='mr-2'>Please enter a shipping date :</span>
-                <DatePicker disabledDate={(moment)=>(moment.endOf('day'))} onChange={(value)=>(
-                    setCalendar(value.calendar())
-                )}  className='w-full'>
-                </DatePicker>
+                <span className='md:hidden'>
+                    <DatePicker className='w-full' disabledDate={disabledDate} onChange={(value)=>(
+                        setCalendar(value.calendar())
+                    )} >
+                    </DatePicker>
+                </span>
+                <span className='hidden md:block'>
+                    <Calendar value={value} onSelect={onSelect}  disabledDate={disabledDate} onPanelChange={onPanelChange} />
+                </span>
+                
             </div>
             ),
         },
     ];
 
-    const [current, setCurrent] = useState(0);
-
-    const next = () => {
-        setCurrent(current + 1);
-    };
-
-    const prev = () => {
-        setCurrent(current - 1);
-    };
-
-    const checkTime = function () {
-        if(calendar===""){
-            message.warn('Please enter a valid time')
-        }
-        else{
-            message.success('Shipping will arrive at '+calendar)
-        }
-    }
-
+   
     return (
         <div className='w-full px-12 my-12'>
 

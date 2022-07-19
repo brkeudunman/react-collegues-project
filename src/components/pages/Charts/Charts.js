@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import BarChart from './BarChart'
 import Chart from 'chart.js/auto';
 import PieChart from './PieChart';
-
+import './index.css'
 import { Tabs } from 'antd';
 
 
@@ -78,10 +78,10 @@ function Charts() {
   return (
     <span className='w-full'>
       <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4 lg:ml-12 md:ml-3 md:text-start text-center'>Charts</h1>
-      <div className='lg:px-12  '>
-        <Tabs style={{color:"#718096"}} centered defaultActiveKey="1">
+      <div className='lg:px-12  tabs'>
+        <Tabs  style={{color:"#718096"}} centered defaultActiveKey="1">
 
-        <TabPane  tab="Articles" key="1">
+        <TabPane id='tabpane1' tab="Articles" key="1">
           <BarChart data={articles} header={<h2 className='self-center mb-2'>Articles:</h2>}/>
         </TabPane>
 
