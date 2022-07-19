@@ -6,6 +6,7 @@ import Notifications from './pages/Notifications/Notifications'
 import Charts from './pages/Charts/Charts'
 import Contact from './pages/Contact/Contact'
 import Clients from './pages/Clients/Clients'
+import Shipping from './pages/Shipping/Shipping'
 
 function Main() {
 
@@ -20,6 +21,7 @@ function Main() {
         <Route path='charts' element={<Charts></Charts>}></Route>       
         <Route path='contact' element={<Contact></Contact>}></Route>
         <Route path='clients' element={<Clients></Clients>}></Route>
+        <Route path='shipping' element={<Shipping></Shipping>}></Route>
       </Routes>
     </div>
        
