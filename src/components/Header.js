@@ -1,7 +1,7 @@
 import { Alert, Avatar, Badge, Button, Col, Dropdown, Menu, Row, Space } from 'antd'
 import React, { createContext, useState } from 'react'
 import logo from '../imgs/logo_submit.png'
-import { DingtalkSquareFilled, DownOutlined, SmileOutlined, UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 
 function Header() {
 
