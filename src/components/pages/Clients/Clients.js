@@ -19,7 +19,10 @@ function Clients() {
   return (
     <div className='flex flex-col flex-wrap md:w-full px-12' >
       <h1 className='md:text-4xl text-2xl font-bold text-gray-700 md:mt-8 mt-4  md:text-start text-center mb-8'>Clients Data</h1>
+     
       <Table size='small' rowSelection={{type: "checkbox"}}  columns={columnstData} dataSource={dataSource} />
+    
+      
     </div>
     
   )

@@ -55,7 +55,7 @@ function Shipping() {
     
     const steps = [
         {
-        title: 'First',
+        title: 'Terms',
         content:(<span>
                     <Terms/>
                     <Checkbox checked={terms} onChange={()=>{setTerms(!terms)}}>Understand the terms</Checkbox>
@@ -64,12 +64,12 @@ function Shipping() {
 
         },
         {
-        title: 'Second',
+        title: 'Info',
 
         content: <ShippingInfo/>,
         },
         {
-        title: 'Last',
+        title: 'Date',
         content: (
             <div className='w-full'>
                 <span className='mr-2'>Please enter a shipping date :</span>
